@@ -17,13 +17,14 @@ const images = [
 function Flipbook(){
     return(
     <>
-    <div className="flex justify-center items-center h-screen bg-transparent">
-        
+    <div className="flex justify-center items-center h-screen bg-transparent overflow-hidden">
+        <div className="w-[90vw] h-[90vh] mt-50  max-w-[800px] max-h-[1000px]">
       <HTMLFlipBook
         width={500}
         height={500}
         showCover={true}
         drawShadow={false}
+        size="stretch"
       >
         {images.map((src, idx) => (
           <div key={idx} className="w-full h-full bg-transparent shadow-none">
@@ -35,6 +36,7 @@ function Flipbook(){
           </div>
         ))}
       </HTMLFlipBook>
+    </div>
     </div>
     </>
     )
